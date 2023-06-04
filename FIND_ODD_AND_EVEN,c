@@ -1,0 +1,16 @@
+// FIND EVEN AND ODD
+#include <stdio.h>
+
+int main() {
+  int a;
+  printf("ENTER YOUR NO.");
+  scanf("%d",&a);
+if(a%2==0){
+    printf("%d IS A EVEN NUMBER",a);
+    }
+else{
+    printf("%d IS A ODD NUMBER");
+    }
+
+    return 0;
+}
