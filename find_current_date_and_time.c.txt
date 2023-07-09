@@ -1,0 +1,11 @@
+//find_current_date_and_time.c
+
+#include<stdio.h>
+#include<time.h>
+int main()
+{
+time_t j;
+time(&j);
+printf("current date and time is:%s",ctime(&j));
+return 0;
+}
