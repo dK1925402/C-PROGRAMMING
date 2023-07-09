@@ -1,0 +1,874 @@
+#include <stdio.h>
+
+int main() {
+  
+    printf("Hello world");
+
+    return 0;
+}
+
+
+
+
+
+
+
+//find sum of 2 numbers
+#include <stdio.h>
+
+int main() {
+  int a,b;
+  printf("ENTER FIRST NO. : ");
+  scanf("%d",&a);
+printf("ENTER SECOND NO. : ");
+  scanf("%d",&b);
+  
+  printf("THE SUM IS %d",a+b);
+  
+
+    return 0;
+}
+
+
+
+
+
+
+//find subtract of 2 numbers
+#include <stdio.h>
+
+int main() {
+  int a,b;
+  printf("ENTER FIRST NO. : ");
+  scanf("%d",&a);
+printf("ENTER SECOND NO. : ");
+  scanf("%d",&b);
+  
+  printf("THE SUB IS %d",a-b);
+  
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+// FIND EVEN AND ODD
+#include <stdio.h>
+
+int main() {
+  int a;
+  printf("ENTER YOUR NO.");
+  scanf("%d",&a);
+if(a%2==0){
+    printf("%d IS A EVEN NUMBER",a);
+    }
+else{
+    printf("%d IS A ODD NUMBER");
+    }
+
+    return 0;
+}
+
+//find factorial
+#include <stdio.h>
+
+int main() {
+  int a,i,j=1;
+  printf("ENTER YOUR NO.");
+  scanf("%d",&a);
+  
+  for (i=1;i<=a;i++){
+      j=j*i;
+  }
+  printf("THE FACTORIAL IS %d",j); 
+  
+    return 0;
+}
+
+
+
+
+
+
+
+
+//FIND ARMSTRONG NUMBER 
+#include <stdio.h>
+#include <math.h>
+int main() {
+  int a,b,c,d,e;
+  printf("ENTER YOUR NO.");
+  scanf("%d",&a);
+  
+  if (a<99){
+      printf("%d IS NOT AN ARMSTRONG NO.",a);
+  }
+  
+  else if (a<999){
+      b=a/100;
+      c=a%100/10;
+      d=a%100%10;
+       
+    if(a==pow(b,3)+pow(c,3)+pow(d,3)){
+        printf("%d IS AN ARMSTRONG NO.",a);
+        }    
+        else {
+        printf("%d IS NOT AN ARMSTONG NO.",a);
+    }
+        
+          }
+  else if(a>999)
+  {
+b=a/1000;
+c=a%1000/100;
+d=a%1000%100/10;
+e=a%1000%100%10;
+
+if(a==pow(b,4)+pow(c,4)+pow(d,4)+pow(e,4)){
+        printf("%d IS AN ARMSTRONG NO.",a);}
+    else {
+        printf("%d IS NOT AN ARMSTONG NO.",a);
+    }    }    
+        
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+// FIND PRIME OR NOT
+#include <stdio.h>
+
+int main() {
+    int a,b,c;
+ printf("ENTER YOUR NO. : ");
+ scanf("%d",&a);
+    b=a+1;
+    c=a-1;
+    if (a==2&&3&&5){
+         printf("%d is a Prime no.",a);
+    }
+  
+    else if (b % 6==0 || c % 6==0){
+    printf("%d is a Prime no.",a);
+        } 
+    else{
+        printf("%d is not a Prime number ",a);}    
+        
+    return 0;
+}
+
+
+
+
+
+
+//find the sum of n natural no.
+
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+    printf("ENTER YOUR N NUMBER : ");
+    scanf("%d", &a);
+  
+    for (c=1;c<=a;c++){
+        b=c+b;
+        }
+   printf("THE SUM OF N NATURAL NO. IS %d",b);
+        
+    return 0;
+}
+
+
+
+
+
+
+
+//MATRIX OF 3 BY 3
+
+#include <stdio.h>
+
+int main() {
+    int a[3][3], b, c;
+   
+    for (b=1;b<=3;b++){
+    for (c=1;c<=3;c++){
+    printf("ENTER THE VALUE OF a[%d][%d]  :",b,c);
+    scanf("%d", &a[b][c]);  }}
+    printf("\n\n");
+  
+  
+    for (b=1;b<=3;b++){
+    for (c=1;c<=3;c++){
+        printf("THE VALUE OF a[%d][%d]  : %d\n",b,c,a[b][c]);}}
+        
+        
+        printf("\n");
+        printf("            OR                 \n");
+   
+   
+    for (b=1;b<=3;b++){
+    for (c=1;c<=3;c++){
+    printf("%d ,",a[b][c]);}
+    printf("\n");                        }    
+        
+  
+    return 0;
+}
+
+
+
+
+
+
+
+//FIND FIBONACCI SERIOUS
+
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+   
+  printf("ENTER THE FIRST NO. IN FIBONACCI SERIOUS : ");
+    scanf("%d", &a);  
+  printf("ENTER THE SECOND NO. IN FIBONACCI SERIOUS : ");
+    scanf("%d", &b);  
+  printf("THE FIBONACCI SERIOUS IS : ");
+  
+  for(a;a<=1000000;) { 
+    c=a+b;
+    a=b;
+    b=c;
+  printf("%d ,",c);}  
+  
+   return 0;
+}
+
+
+
+
+
+//FIND PALINDROME NO.
+#include <stdio.h>
+
+int main() {
+    int a, b, c, d, e;
+
+    printf("ENTER YOUR NO.");
+    scanf("%d", &a);
+
+    if (a <= 99) {
+        c = a / 10;
+        d = a % 10;
+        printf("%d , %d\n", c, d);
+
+        if (a == d * 10 + c) {
+            // printf("%d IS A PALINDROME NO.", a); 
+        } else {
+            printf("%d IS NOT A PALINDROME NO.", a);
+        }
+    } else if (a <= 999) {
+        b = a / 100;
+        c = a % 100 / 10;
+        d = a % 100 % 10;
+        int k = a;
+        // printf("%d , %d , %d\n", b, c, d);
+
+        if (a == ((d * 100) + (c * 10) + b)) {
+            printf("%d IS A PALINDROME NO.", k);
+        } else {
+            printf("%d IS NOT A PALINDROME NO.", k);
+        }
+    } else if (a <= 9999) {
+        b = a / 1000;
+        c = a % 1000 / 100;
+        d = a % 1000 % 100 / 10;
+        e = a % 1000 % 100 % 10;
+
+        // printf("%d , %d , %d , %d\n", b, c, d, e);
+
+        if (a == e * 1000 + d * 100 + c * 10 + b) {
+            printf("%d IS A PALINDROME NO.", a);
+        } else {
+            printf("%d IS NOT A PALINDROME NO.", a);
+        }
+    }
+
+    return 0;
+}
+
+ 
+
+
+
+
+              
+
+//FIND PALINDROME TO USE OF FUNCTION
+#include <stdio.h>
+
+int start(int a, int b, int c, int d) {
+    b = a / 100;
+    c = a % 100 / 10;
+    d = a % 100 % 10;
+    int k = a;
+    printf("%d , %d , %d\n", b, c, d);
+
+    if (a == ((d * 100) + (c * 10) + b)) {
+        printf("%d IS A PALINDROME NO.", k);
+    } else {
+        printf("%d IS NOT A PALINDROME NO.", k);
+    }
+}
+
+int main() {
+    int a, b, c, d, e;
+
+    printf("ENTER YOUR NO.");
+    scanf("%d", &a);
+
+    if (a <= 99) {
+        c = a / 10;
+        d = a % 10;
+        printf("%d , %d\n", c, d);
+
+        if (a == d * 10 + c) {
+            printf("%d IS A PALINDROME NO.", a);
+        } else {
+            printf("%d IS NOT A PALINDROME NO.", a);
+        }
+    } else if (a <= 999) {
+        start(a, b, c, d);
+    } else if (a <= 9999) {
+        b = a / 1000;
+        c = a % 1000 / 100;
+        d = a % 1000 % 100 / 10;
+        e = a % 1000 % 100 % 10;
+
+        printf("%d , %d , %d , %d\n", b, c, d, e);
+
+        if (a == e * 1000 + d * 100 + c * 10 + b) {
+            printf("%d IS A PALINDROME NO.", a);
+        } else {
+            printf("%d IS NOT A PALINDROME NO.", a);
+        }
+    }
+
+    return 0;
+}
+
+
+
+
+// find squareroot
+
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+    float a, k;
+
+    printf("ENTER YOUR NO.: ");
+    scanf("%f", &a);
+
+    k = sqrt(a);
+    printf("The square root of %.2f is %.2f\n", a, k);
+    
+    return 0;
+}
+
+
+// FIND_RECTANGLE_AREA
+ #include <stdio.h>
+
+int main() {
+   int a,b;
+   
+    printf("FIND THE AREA OF RECTANGLE:-\n\n");
+    printf("ENTER LENGTH OF RECTANGLE : ");
+    scanf("%d",&a);
+    
+    printf("ENTER BREADTH OF RECTANGLE : ");
+    scanf("%d",&b);
+
+    printf("THE AREA OF RECTANGLE : %d",a*b);
+
+    return 0;
+}
+
+
+// FIND_CIRCLE_AREA
+
+#include <stdio.h>
+#include<math.h>
+int main() {
+   int a,b;
+   
+    printf("FIND THE AREA OF CIRCLE:-\n\n");
+    printf("ENTER RADIUS OF CIRCLE : ");
+    scanf("%d",&a);
+    
+  b=2*3.14*(pow(a,2));
+
+    printf("THE AREA OF CIRCLE : %d",b);
+
+    return 0;
+} 
+
+
+// FIND_TRIANGLE_AREA
+#include <stdio.h>
+
+int main() {
+   int a,b;
+   
+    printf("FIND THE AREA OF TRIANGLE:-\n\n");
+    printf("ENTER BASE OF TRIANGLE : ");
+    scanf("%d",&a);
+    
+    printf("ENTER HEIGHT OF TRIANGLE : ");
+    scanf("%d",&b);
+
+    printf("THE AREA OF TRIANGLE : %d",a*b*0.5);
+
+    return 0;
+}
+
+// FIND_SQUARE_AREA
+
+#include <stdio.h>
+#include<math.h>
+int main() {
+   int a,b;
+   
+    printf("FIND THE AREA OF SQUARE:-\n\n");
+    printf("ENTER THE SIDE OF SQUARE  : ");
+    scanf("%d",&a);
+    
+  b=pow(a,2);
+
+    printf("THE AREA OF SQUARE : %d",b);
+
+    return 0;
+} 
+
+
+//Celsius(°C)_TO_Fahrenheit(°F)
+
+#include <stdio.h>
+
+int main() {
+   int a,b;
+   
+    printf(" Celsius (°C) TO Fahrenheit (°F), :-\n\n");
+    printf("ENTER CELSIUS (°C) : ");
+    scanf("%d",&a);
+    
+  b=a*1.8+32;
+
+    printf(" %d (°C) IS EQUALL TO  : %d (°F)",a,b);
+
+    return 0;
+} 
+
+
+
+//Fahrenheit(°F)_TO_Celsius(°C)
+#include <stdio.h>
+
+int main() {
+   int a,b;
+   
+    printf("Fahrenheit (°F) TO Celsius (°C) :-\n\n");
+    printf("ENTER CELSIUS (°F) : ");
+    scanf("%d",&a);
+    
+  b=(a-32)/1.8;
+
+    printf(" %d (°F) IS EQUALL TO  : %d (°C)",a,b);
+
+    return 0;
+} 
+
+
+
+//FIND_SQUARE
+
+
+#include <stdio.h>
+#include<math.h>
+int main() {
+   int a,b;
+   
+    printf(" ENTER NO.");
+    scanf("%d",&a);
+    
+  b=pow(a,2);
+
+    printf("THE SQUARE OF %d  : %d ",a,b);
+
+    return 0;
+} 
+
+
+
+
+
+
+//FIND_CUBE
+
+
+#include <stdio.h>
+#include<math.h>
+int main() {
+   int a,b;
+   
+    printf(" ENTER NO.");
+    scanf("%d",&a);
+    
+  b=pow(a,3);
+
+    printf("THE CUBE OF %d  : %d ",a,b);
+
+    return 0;
+} 
+
+
+
+
+
+
+//FIND_POWER
+
+
+#include <stdio.h>
+#include<math.h>
+int main() {
+   int a,b,c;
+   
+    printf(" ENTER NO .");
+    scanf("%d",&a);
+    printf(" ENTER POWER OF NO. %d^",A);
+    scanf("%d",&a);
+    c=pow(a,b);
+
+    printf("  %d ^ %d  =  %d ",a,b,C);
+
+    return 0;
+}
+
+
+
+//MULTIPLICATION-TABLE
+
+
+#include <stdio.h>
+
+int main() {
+   int a,c;
+   
+    printf(" ENTER NO .");
+    scanf("%d",&a);
+   
+   for(int i=1;i<=10;i++){
+       
+       c=a*i;
+       
+         printf("%d X %d  =  %d\n",a,i,c);
+   }
+
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+//FIND-GREATEST-NO.BETWEEN-THREE
+
+#include<stdio.h>
+int main (){
+    int a,b,c;
+    
+    
+    
+    printf("ENTER FIRST NO.");
+    scanf("%d",&a);
+    printf("ENTER SECOND NO.");
+    scanf("%d",&b);
+    printf("ENTER THIRD NO.");
+    scanf("%d",&c);
+    
+    if(a>b&&b>c){
+             printf("%d IS GREATER THAN %d , %d",a,b,c);
+    }
+    else if(a<b&&b>c){
+             printf("%d IS GREATER THAN %d , %d",b,a,c);
+}
+    else if(a<b&&b<c){
+           printf("%d IS GREATER THAN %d , %d",c,b,a);
+    }
+    
+    
+    // situation
+    
+    
+     else if(a==b&&b==c){
+        printf("ALL ARE EQUAL");
+    }
+     else if(a>b&&b==c){
+        printf("%d IS GREATER THAN %d , %d",a,b,c);
+    }
+     else if(a>c&&b==c){
+        printf("%d IS GREATER THAN %d , %d",a,b,c);
+    }   
+    
+     else if(b>c&&a==c){
+         printf("%d IS GREATER THAN %d , %d",b,a,c);
+    } 
+    
+     else if(b>a&&a==c){
+         printf("%d IS GREATER THAN %d , %d",b,a,c);
+    } 
+    
+     else if(c>a&&a==b){
+       printf("%d IS GREATER THAN %d , %d",c,b,a);
+    } 
+       else if(c>b&&a==b){
+       printf("%d IS GREATER THAN %d , %d",c,b,a);
+    } 
+    
+    
+      // situation
+     
+     
+      if(a==b&&b>c){
+             printf("%d , %d IS GREATER THAN %d",a,b,c);
+    }
+    else if(a<b&&b==c){
+              printf("%d , %d IS GREATER THAN %d",b,c,a);
+}
+    else if(a==c&&b<c){
+              printf("%d , %d IS GREATER THAN %d",a,c,a);
+    }
+    
+    
+}
+
+
+
+
+
+//FIND-GREATEST-NO.BETWEEN-TWO
+
+#include<stdio.h>
+int main (){
+    int a,b,c;
+    
+
+    
+    printf("ENTER FIRST NO.");
+    scanf("%d",&a);
+    printf("ENTER SECOND NO.");
+    scanf("%d",&b);
+  
+    
+    if(a>b){
+             printf("%d IS GREATER THAN %d",a,b);
+    }
+    else if(a==b){
+             printf("BOTH ARE EQUALS");
+}
+    else if(a<b){
+           printf("%d IS GREATER THAN %d",b,a);
+    }
+    
+     
+}
+
+
+
+
+//MAGICAL-PROGRAMS
+
+#include<stdio.h>
+int main (){
+    int a,b,c,d;
+    
+     printf("think Any to 2 digit number\nExample 45,96,35,93 etc..\n\n");
+    
+    printf("Add this number\nif you have choose 45 so add (4+5)=9\n\n");
+    printf("New no. subtract from orignal no.\nExample 45-9=36\n\n");
+    printf("THE RESULT OF SUBTRACT ,ENTER ANY NO. FROM THIS \n EXAMPLE RESULT 36 \n\nENTER NO. 3 OR 6\nENTER :  ");
+   
+    scanf("%d",&a);
+
+    b=9-a;
+    c=a*10+b;
+    d=b*10+a;
+    printf("\n\nyour no. is %d OR %d ",c,d);
+}
+
+
+
+
+
+
+
+
+
+
+FIND_LENGTH_STRING_BUT_NOT_PROPER(SPACE_COUNT_PROBLEM)
+
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+
+printf("NOTE : PLEASE USE (_) FOR SPACE\n\n\n");
+    
+char a[100];
+printf("Enter your string : ");
+scanf("%s",&a);
+
+printf("The lenght of string is : %d",strlen(a));
+return 0;  }
+
+
+
+
+
+FIND_LENGTH_STRING_WITH_PROPER_COUNT
+
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+
+raftar:   // USE FOR GOTO STATEMENT 
+
+printf("NOTE : PLEASE USE (_) FOR SPACE\n\n");
+    
+char a[100];
+printf("Enter your string : ");
+scanf("%s",&a);
+
+int i=strlen(a); //i == LENGTH OF STRING 
+
+for(i;i>=0;i--){
+    
+if (a[i]=='_'){  // USE FOR REMOVE COUNT OF (_) ;
+int j = strlen(a)-1;
+printf("The lenght of string is : %d\n\n\n",j);
+    
+goto raftar;  /*USE FOR REMOVE PRINT OF ELSE FUNCTION */ }}
+
+if (NULL){ } // USE FOR USE ELSE FUNCTION BECAUSE WITHOUT IF FUNCTION WE CAN'T USE OF ELSE FUNCTION  ||  OTHER IF FUNCTION UNDER THE FOR LOOP THEREFORE USE NEW IF NULL FUNCTION  
+
+else{
+int j= strlen(a);
+printf("The lenght of string is : %d\n\n\n",j);
+ 
+goto raftar;   }
+
+return 0;   }
+
+
+
+
+
+
+
+FIND_REVERSE_STRING 
+
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+    
+char dts[100];
+
+printf("NOTE : PLEASE USE (_) FOR SPACE\n\n\n");
+printf("Enter your string  :  ");
+scanf("%s",&dts);
+
+int p  = strlen(dts)-1;// -1 because array start from 0 and strlen count start from 1 therefore -1 from strlen
+
+
+ 
+  printf("The reverse of string  is : ");
+   for (p ;p>=0;p--){
+       
+ 
+       printf("%c",dts[p]);
+       
+      
+} printf("\n\n\nONLY FOR ENTERTAINMENT PURPOSE");
+ return 0; }
+
+
+
+
+
+
+
+
+//FIND_VALUE_WHICH_STORES_IN_THIS_ADDRESS
+// this prrogram helps find which data stores in address
+
+#include <stdio.h>
+
+int main() {
+    int a=5;
+  //  printf("The value of a is : %d\n",a)
+    printf("The address of a is : %d\n",&a);
+    
+   int* b=&a; //b stores the address of a 
+   
+    printf("ENTER THE ADDRESS OF A FOR FIND VALUE OF A : ");
+    scanf("%d",&b);
+    
+    int *ptr = (int *)b;  // (int*)'address'  this use for find the value which stores in this address
+ 
+    printf("Value of 'a': %d\n", *ptr);
+
+    return 0;
+}
+
+
+
+
+//find_current_date_and_time
+
+#include<stdio.h>
+#include<time.h>
+int main()
+{
+time_t j;
+time(&j);
+printf("current date and time is:%s",ctime(&j));
+return 0;
+}
+
+
