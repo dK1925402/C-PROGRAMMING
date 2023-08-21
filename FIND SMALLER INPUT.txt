@@ -2,7 +2,7 @@
 
 int main() {
     
-     printf("(((----FIND LARGER INPUT----)))\n\n\n");
+     printf("(((----FIND SMALLER INPUT----)))\n\n\n");
  int a[10],min ;
  
     printf("# ENTER YOUR 1 INPUT : ");
