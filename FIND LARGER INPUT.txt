@@ -20,7 +20,7 @@ for (int i=1;i<10;i++){
     }
 }
 printf("\n\n\n");
-printf("**** YOUR MINIMUM INPUT IS : %d ****",max);
+printf("**** YOUR MAXIMUM INPUT IS : %d ****",max);
 
 
     return 0;
