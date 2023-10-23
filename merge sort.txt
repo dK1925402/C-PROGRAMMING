@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int a[] = {4, 6, 7, 9};
+    int b[] = {3, 6, 12, 21};
+    int c[8];
+
+    int i = 0, j = 0, k = 0;
+
+    while (j < 4 && k < 4) {
+        if (a[j] <= b[k]) {
+            c[i] = a[j];
+            j++;
+        } else {
+            c[i] = b[k];
+            k++;
+        }
+        i++;
+    }
+
+    // Copy the remaining elements from 'a' or 'b' if any.
+    while (j < 4) {
+        c[i] = a[j];
+        j++;
+        i++;
+    }
+    while (k < 4) {
+        c[i] = b[k];
+        k++;
+        i++;
+    }
+
+    for (i = 0; i < 8; i++) {
+        printf("c[%d] = %d\n", i, c[i]);
+    }
+
+    return 0;
+}
