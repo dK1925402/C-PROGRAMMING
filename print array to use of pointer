@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main()
+{
+    int b[] = {55,46,45} ;
+    int k =9;
+    int a[]= {5,9,8,12,6,314,56,656,259,52,6,333,936,882};
+    int *ptr=&a[0];   // OR int *ptr=a;
+    int i=0;
+
+    while ( i<14) {
+        printf("a[%d] = %d\n",i,*ptr++ );
+        i++;
+    }
+}
