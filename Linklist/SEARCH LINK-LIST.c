@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+
+struct node {
+    int data ;
+    struct node * link ; // self referencing function
+};
+
+//Print all available data
+void print(struct node *head )
+{
+    while (head != NULL) {
+        printf("%d, ",head ->data);
+        head = head -> link;
+    }
+}
+
+// find the data in linklist
+void search (struct node *head ,int search)
+{
+
+    struct node * ptr = head;
+    int i=1,j=0;
+
+    while (ptr != NULL ) {
+
+        if (ptr -> data == search) {
+            printf ("*** %d Found In %d NODE ***\n -- SUCCESSFULLY --",search, i);
+            j=7;
+        }
+
+        ptr = ptr-> link;
+        i++;
+
+    }
+
+    if (j!=7) {
+        printf("*** --- Data not found --- ***");
+    }
+};
+
+
+int main()
+{
+    // create pointers for creates linked list nodes
+    struct node *head ,*second ,*third,*fourth ;
+
+// Provide dynamic memory to use malloc function ( IN HEAP MEMORY)
+    head = (struct node*) malloc (sizeof (struct node));
+    second  = (struct node*) malloc (sizeof (struct node));
+    third = (struct node*) malloc (sizeof (struct node));
+    fourth  = (struct node*) malloc (sizeof (struct node));
+
+
+    // linked first node to second
+    head -> data = 5;
+    head ->link = second ;
+
+    // linked second to third
+    second -> data = 7 ;
+    second ->link = third  ;
+
+    //linked third to fourth
+    third-> data = 24;
+    third ->link = fourth ;
+
+
+    //terminate the program to linked the NULL
+    fourth-> data = 95;
+    fourth ->link = NULL ;
+
+// Call to print function for print linklist
+    printf("Available data = ");
+    print(head);
+
+    // Input from user for search data
+    printf("\n\nENTER YOUR SEARCH DATA : ");
+    int searching ;
+    scanf("%d",&searching );
+
+    // Call to search functions for serach data in linklist
+    search(head, searching);
+
+
+
+    return 0;
+}
