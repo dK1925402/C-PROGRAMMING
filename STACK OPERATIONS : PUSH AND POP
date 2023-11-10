@@ -1,0 +1,103 @@
+// STACK OPERATIONS : PUSH AND POP
+
+#include <stdio.h>
+#include<stdlib.h>
+
+// create a struct
+struct stack {
+
+    int size ;
+    int top ;
+    int *arr;
+};
+
+
+// POP function for pop the data
+struct stack *popstack(struct stack *ptr )
+{
+
+    if ( ptr -> top == - 1 ) {
+        printf("\n\n *** STACK IS UNDERFLOW ***\n\n");
+    }
+
+    else {
+
+        ptr->top--;
+        printf("\n\n--- -- POP IS SUCCESSFULLY -- ---\n\n");
+
+    }
+}
+
+// PUSH function for pop the data
+struct stack *  pushstack(struct stack *ptr, int value)
+{
+
+    if (ptr ->top == ptr-> size -1) {
+
+
+        printf("\n\n*** STACK IS OVERFLOW ***\n\n");
+
+        // Print stack after full
+        printf("\nSTACK : ");
+        for (int i =0 ; i < ptr->top+1; i++) {
+            printf("%d - ", ptr->arr[i]);
+        }
+
+    }
+
+    else {
+
+        ptr -> top++;
+        ptr -> arr[ptr -> top ]=value ;
+        printf("\n\n--- -- PUSH IS SUCCESSFULLY -- ---\n\n");
+    }
+}
+
+int main()
+{
+// create stack
+    struct stack * s = (struct stack *) malloc (sizeof (struct stack));
+    s-> size = 5;
+    s-> top = -1 ;
+    s-> arr = (int *)malloc (sizeof(int) *  s->size);
+
+
+// repeat the program
+REPEAT:
+
+    // Choose which are do with stack PUSH or PULL
+
+
+    printf("\n\nPress 1 for PUSH && Press 2 for POP\n\nPRESS : ");
+    int value , choose ;
+
+    scanf("%d", &choose );
+
+
+    if (choose == 1 ) {
+
+        printf("\n\nINPUT YOUR DATA : ");
+        scanf("%d",&value);
+
+        pushstack(s,value);
+    }
+
+    else if (choose == 2) {
+        popstack(s);
+    }
+
+    else {
+        printf("\n\nEnter Correct INPUT\n\n");
+    }
+
+
+
+    //repeat the program for create continuity to stack
+    goto REPEAT;
+
+
+    return 0;
+
+
+
+}
