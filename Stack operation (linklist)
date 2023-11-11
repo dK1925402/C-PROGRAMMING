@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+//create a node 
+struct node {
+
+    int data ;
+    struct node * next ;
+
+};
+
+//Print the stack 
+void print(struct node * top)
+{
+    while ( top != NULL) {
+        printf( "%d ->", top ->data);
+        top =top -> next ;
+    }
+
+}
+
+// pop the value of stack 
+int pop(struct node *top)
+{
+
+    if ( top == NULL) {
+        printf("\n\n\n***Stack UnderFlow ***");
+    }
+
+    else {
+        struct node *temp = top;
+        top = top -> next ;
+        free(temp);//free the memory of stack 
+    }
+
+    return top  ;
+}
+
+
+
+// push the data in stack 
+int push(struct node *top , int value )
+{
+
+    struct node * ptr=  ( struct node * ) malloc (sizeof (struct node ));
+
+//heap is full then not created any new node  then stack is overflow
+    if (ptr == NULL ) {
+        printf("*** Stack OverFlow ***"); 
+    
+    }
+
+    else {
+        ptr -> next = top ;
+        ptr ->data = value ;
+    }
+
+    return ptr ;
+}
+
+
+int main ()
+{
+
+    struct node *top = NULL; // top is NULL
+
+
+    top = push(top ,10); //push data in stack  
+    top = push(top ,20); //push data in stack 
+    top = push(top ,30); //push data in stack 
+    top = push(top ,40); //push data in stack 
+    top = push(top ,50); //push data in stack 
+    top = push(top ,60); //push data in stack 
+    top = push(top ,70); //push data in stack 
+    top = push(top ,80); //push data in stack 
+
+    printf("BEFORE STACK : ");    
+    print(top);  //print the stack 
+
+
+    top = pop(top); // pop the data from stack
+    top = pop(top); // pop the data from stack
+    top = pop(top); // pop the data from stack
+
+    top = push(top ,99); // push data in stack
+
+    printf("\n\n\n");
+
+    printf("AFTER STACK : ");
+    print(top); //print the stack 
+
+
+}
