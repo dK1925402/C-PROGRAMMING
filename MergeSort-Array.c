@@ -37,14 +37,14 @@ void mergesort( int *a,int *b,int *c, int m ,int n )
 
     }
 
-//leftover(बचे हुए) elements print
+//Remaining elements print
     while ( i<m) {
         c[k]= a[i];
         i++;
         k++;
     }
 
-//leftover(बचे हुए) elements print
+//Remaining elements print
     while (j<n) {
         c[k]= b[j];
         j++;
@@ -59,8 +59,8 @@ void mergesort( int *a,int *b,int *c, int m ,int n )
 int main()
 {
 
-    int a[]= {5,6,9,10,15};//j//m
-    int b[]= {2,8,12,19,23};//i//n
+    int a[]= {5,6,9,10,15};//i//m
+    int b[]= {2,8,12,19,23};//j//n
 
     int m = sizeof(a)/4;
     int n= sizeof(b)/4;
