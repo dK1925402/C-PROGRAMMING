@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+struct node {
+int data ;
+struct node * right;
+struct node * left ;
+
+};
+
+
+// this function helps for create a newnode :
+ struct node * newnode ( int data ){
+
+ struct node * node = (struct node *)malloc (sizeof(struct node ));
+ node-> data = data;
+ node -> right = NULL;
+ node-> left = NULL; 
+ 
+ return node ;
+}
+
+/*  the properties of binary search tree :
+1. left subtree is lesser than root and right subtree
+2. right subtree is greater than root and left subtree
+3. print the binary search tree in INRDER TRAVERVAL ARE ALWAYS PRINT IN ASCENDING ORDER 
+*/        
+
+
+//this function helps for search the key in binary tree
+void search ( struct node *root , int key){
+if ( root != NULL){
+  if (root -> data == key ){
+    printf("KEY = %d founded successfully in binary tree ",root -> data);
+  }
+
+// THEN KEY IS GREATER THAN ROOT DATA 
+  else if ( root ->data < key ){
+    search ( root ->right , key);
+  }
+// THEN KEY IS SMALLER THAN ROOT DATA 
+    else if ( root ->data > key ){
+    search ( root ->left , key);
+  }
+}
+//KEY IS NOT FOUND
+else{
+  printf("KEY = %d not found in binary tree",key);
+}
+
+
+}
+
+
+
+int main() {
+
+
+//create the nodes 
+struct node* n =newnode(5);
+struct node *n1 =newnode(3);
+struct node *n2 =newnode(6);
+struct node *n3 =newnode(1);
+struct node *n4 =newnode(4);
+
+
+
+    /*   
+
+    structure of tree :
+
+                    5
+                  /   \
+                3       6
+              /   \
+            1       4                     */
+
+
+//links the nodes 
+n-> left = n1;
+n->right = n2;
+n1->left = n3;
+n1 -> right = n4;
+
+printf("_______ Search your key ______\n\n");
+printf("Enter your KEY : ");
+int key;// DECLARE KEY INTEGER
+  scanf("%d",&key);// INPUT THE VALUE OF KEY 
+  printf("\n\n") ; 
+  search(n,key);//CALL THE FUNCTION 
+  
+  return 0;
+}
