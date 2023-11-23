@@ -1,0 +1,127 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//  create struct
+struct node {
+  int data ;
+  struct node* left ;
+  struct node * right ;
+};
+
+
+//createnode function help for create nodes 
+struct node *createnode(int data){
+struct node *p = (struct node*) malloc (sizeof(struct node));
+p->data = data ;
+return p ;
+}
+
+//print all the tree in INORDER WAY
+void print(struct node * root){
+if (root != NULL){
+   
+print(root->left);
+ printf("%d -> ",root-> data);
+print(root->right);
+}  }
+
+
+
+// create delete function 
+
+struct node *delete(struct node *root, int data) {
+    if (root == NULL) {
+        return NULL;
+    }
+
+    if (data < root->data) {
+        root->left = delete(root->left, data);
+    } else if (data > root->data) {
+        root->right = delete(root->right, data);
+    } 
+    
+    
+    else {
+        // Node with only one child or no child
+        if (root->right == NULL) {
+            struct node *temp = root->left;
+            free(root);
+            return temp;
+        } else if (root->left == NULL) {
+            struct node *temp = root->right;
+            free(root);
+            return temp;
+        }
+
+        // Node with two children
+        struct node *temp = root->right;
+        while (temp->left != NULL) {
+            temp = temp->left;
+        }
+
+        root->data = temp->data;
+        root->right = delete(root->right, temp->data);
+    }
+    return root;
+}
+
+
+//khatam Fn
+/*
+                            8
+                          /    \
+                         3      10
+                        / \        \
+                       1   6        14 
+                          / \       /
+                         4   7     13
+*/
+
+
+
+
+int main() {
+  
+  // call the functions
+  struct node * t1= createnode(8);
+  struct node * t2= createnode(3);
+  struct node * t3= createnode(10);
+  struct node * t4= createnode(1);
+  struct node * t5= createnode(6);
+  struct node * t6= createnode(4);
+  struct node * t7= createnode(7);
+  struct node * t8= createnode(14);
+  struct node * t9= createnode(13);
+
+
+ //link the nodes
+ t1-> left = t2;
+ t1->right = t3;
+ t2-> left = t4;
+ t2-> right = t5;
+ t3->right = t8;
+ t8 ->left = t9;
+ t5-> right = t7;
+ t5 ->left = t6;                                    
+
+
+// call to print function 
+print(t1);
+printf("\n");
+
+// input delete data from user
+int data;
+printf("\nDELETE THE NODE : ");
+scanf("%d",&data);
+
+//call the function for delete the node 
+delete( t1, data);
+
+printf("\n\n\n");
+
+//call to print function for check node delete is successfully
+print(t1);
+
+
+  return 0;
+}
