@@ -1,0 +1,35 @@
+
+#include <stdio.h>
+
+int main() {
+   
+   printf("***** Swap the value without the using of 3rd variable *****\n\n");
+   
+  int  a,b ;
+  
+   printf("Enter the value of a : ");
+   scanf("%d",&a);
+   
+   printf("Enter the value of b : ");
+   scanf("%d",&b);
+
+
+// a = 28 & b = 24
+  b = a-b ;  //b= 28-24      -> then , b= 4
+  a = a-b;   //a = 28 - 4    -> then , a = 24
+  b= a+b;    // b = 24+4     -> then , b = 28
+
+//swap the value successfully  a = 24 , b = 28
+
+printf("\n\nprocessing..........\n");
+printf("\nSwap the value is successfully\n\n");
+
+ printf("\n\nNew value of a = %d",a);
+
+   
+   printf("\nNew value of b = %d",b);
+
+
+
+    return 0;
+}
