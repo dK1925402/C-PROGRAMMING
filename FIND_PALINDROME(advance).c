@@ -9,10 +9,17 @@ char num[10],number[10];
 int j,k=0;
 
   // input from user 
-printf("Enter your no. : ");
+printf("ENTER YOUR NO. : ");
 scanf("%s",&num);
 
-  // find length of the string
+//because it is a character therefore we can't use of the operators (+.-.*,<,>) for comparing .SO we are add logic because number is smaller than 10 , yhen it is under 1 string length and other string is NULL , we choose if num[i]==NULL  . 
+
+if (num[1]==NULL){
+    printf("ERROR ! -- PLEASE ENTER THE NUMBER IS GREATER THAN 9 ");
+    return 1;
+}
+
+// find length of the string
 int length = strlen(num);
 int temp = length ;
 
@@ -35,15 +42,15 @@ number[temp]=num[j];
     
 }
 
-  
 
   if (k==length){
-         printf("It is a palindrome no.");
+         printf(" <<--- %s IS A PALINDROME NUMBER --->> ",num);
      }
      
      else {
-          printf("It is not a palindrome no.");
+           printf(" <<--- %s IS NOT A PALINDROME NUMBER --->> ",num);
      }
+
 
     return 0;
 }
