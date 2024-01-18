@@ -1,17 +1,24 @@
 
-//find factorial
 #include <stdio.h>
 
 int main() {
-  int a,i,j=1;
-  printf("ENTER YOUR NO.");
-  scanf("%d",&a);
-  
-  for (i=1;i<=a;i++){
-      j=j*i;
-  }
-  printf("THE FACTORIAL IS %d",j); 
-  
+ 
+ // declare variables
+int num , fact = 1 ;
+
+//input from user 
+printf("Enter your no. : ");
+scanf("%d",&num);
+
+printf("\n\nprocessing.....\n\n");
+
+for(int i=1 ; i<=num;i++){
+     
+     fact = fact *i ;
+}
+
+printf("Factorial of %d is %d",num,fact);
+
     return 0;
 }
 
